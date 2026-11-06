@@ -1,0 +1,20 @@
+#run this command in powershell to create the required directories and files
+mkdir data\raw, data\processed, figures, notebooks, src
+New-Item .env, .gitignore, requirements.txt, README.md, src\fetch_and_clean.py, notebooks\01_eda_price_explorer.ipynb -ItemType File
+
+
+#run this to activate venv
+python -m venv .venv
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+
+
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install --only-binary=:all: entsoe-py pandas pyarrow numpy scipy matplotlib seaborn yfinance python-dotenv ipykernel
+.\.venv\Scripts\python.exe -c "import entsoe, pandas, pyarrow, numpy, scipy, matplotlib, seaborn, yfinance, dotenv; print('SUCCESS! Pandas:', pandas.__version__, 'PyArrow:', pyarrow.__version__)"
+
+
+
+

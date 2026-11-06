@@ -1,0 +1,19 @@
+# 1. Secrets & Virtual Environment
+.env
+.venv/
+venv/
+
+# 2. Python Cache & Pytest Artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# 3. Data Files (Keep code & figures in Git; ignore heavy data tables)
+data/raw/
+data/processed/*.parquet
+data/processed/*.csv
+
+# 4. OS Files
+.DS_Store
+Thumbs.db
